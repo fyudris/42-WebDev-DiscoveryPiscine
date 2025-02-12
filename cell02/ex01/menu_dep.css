@@ -1,0 +1,52 @@
+.bottom-menu
+{
+   margin: 0 auto;
+   display: block;
+   width: 40px;
+   height: 36px;
+   padding: 10px;
+   border-radius: 7px;
+   background: #666;
+   color: white;
+   cursor: pointer;
+   position: relative;
+}
+
+.bottom-menu span
+{
+   display: block;
+   width: 40px;
+   height: 4px;
+   background: white;
+   margin-top: 7px;
+}
+
+label
+{
+   cursor: pointer;
+}
+
+#menu-toggle
+{
+   display: none;
+}
+
+#menu-list
+{
+   display: none;
+   text-align: center;
+   background: white;
+   padding: 10px 0;
+}
+
+#menu-list li a
+{
+   display: block;
+   padding: 10px 0;
+   color: black;
+}
+
+#menu-toggle:checked + #menu-list
+{
+   display: block;
+}

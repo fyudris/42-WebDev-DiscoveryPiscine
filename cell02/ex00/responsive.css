@@ -1,0 +1,28 @@
+html, body {
+	margin: 0%;
+	padding: 0%;
+	height: 100%;
+}
+table {
+	border-spacing: 0;
+	height: 100%;
+	white-space: nowrap;
+}
+.table-style {
+	border-style: hidden;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	font-size: 30px;
+	white-space: nowrap;
+}
+.left-cell {
+	width: 50%;
+	background-color: lightblue;
+	color: white;
+}
+.right-cell {
+	width: 50%;
+	background-color: lightcoral;
+	color: white;
+}

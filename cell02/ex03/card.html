@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="card.css">
+	<title>Profile Card</title>
+</head>
+<body>
+	<div class="container" style="flex-direction: column; align-items: center;">
+		<h1>User Profile Card</h1>
+		<div class="card">
+			<img class="card-img" src="https://avatars.githubusercontent.com/u/20013173?v=4" alt="card-img">
+			<div class="card-body">
+				<h3>Fanny 42</h3>
+				<h5>Level 9, The Gamer</h5>
+				<p>42Berlin</p>
+			</div>
+			<div class="card-footer">
+				<a href="https://profile.intra.42.fr/users/fyudris" target="_blank">
+					<img
+						class="img-icon"
+						style="border: 2px solid #333;"
+						src="data:image/png;base64,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"
+						alt="42berlin">
+				</a>
+				<a href="https://github.com/fyudris" target="_blank">
+					<img
+						class="img-icon"
+						src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+						alt="github">
+				</a>
+				<a href="" target="_blank">
+					<img
+						class="img-icon"
+						src="https://cdn-icons-png.flaticon.com/512/145/145807.png"
+						alt="linkendin">
+				</a>
+				<a href="" target="_blank">
+					<img
+						class="img-icon"
+						src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/640px-Instagram_logo_2022.svg.png"
+						alt="facebook">
+				</a>
+				<a href="" target="_blank">
+					<img
+						class="img-icon"
+						src="https://www.svgrepo.com/show/331368/discord-v2.svg"
+						alt="discord">
+				</a>
+			</div>
+			<a href="mailto:fyudris@student.42berlin.de">
+				<div class="card-button">
+					<p>Contact</p></a>
+				</div>
+			</a>
+		</div>
+	</div>
+</body>
+</html>

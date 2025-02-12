@@ -1,0 +1,48 @@
+body {
+  margin: 0px !important;
+  background-color: black;
+}
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.first-image {
+  background-image: url("https://images8.alphacoders.com/135/thumb-1920-1354012.png");
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+h3,
+p {
+  color: #fff;
+  margin: 0;
+}
+
+.black-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  height: 40vh;
+  padding: 40px;
+}
+
+.second-image {
+  background-image: url("https://cdn.dynamicwallpaper.club/wallpapers/8yfz86ews2d/thumbs/1600/3.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
