@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+
+    <script>
+        function calculate() {
+            let x = parseInt(document.getElementById("firstNum").value, 10);
+            let y = parseInt(document.getElementById("secNum").value, 10);
+            let operator = document.getElementById("operator").value;
+            let result;
+
+            // Validate inputs: Both must be positive integers
+            if (isNaN(x) || isNaN(y) || x < 0 || y < 0) {
+                alert("Error :(");
+                return;
+            }
+
+            // Check division and modulo by zero
+            if ((operator === "/" || operator === "%") && y === 0) {
+                alert("It’s over 9000!");
+                console.log("It’s over 9000!");
+                return;
+            }
+
+            // Perform calculation
+            switch (operator) {
+                case "+": result = x + y; break;
+                case "-": result = x - y; break;
+                case "*": result = x * y; break;
+                case "/": result = x / y; break;
+                case "%": result = x % y; break;
+                default:
+                    alert("Please select an operator.");
+                    return;
+            }
+
+            // Display result
+            document.getElementById("result").textContent = `The result is ${result}.`;
+            alert(`The result is ${result}.`);
+            console.log(result);
+        }
+
+        // Show alert every 30 seconds
+        setInterval(() => {
+            alert("Please, use me...");
+        }, 30000);
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <p>Enter numbers and choose an operator:</p>
+        <input type="text" id="firstNum" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Enter first number" />
+
+        <select id="operator">
+            <option value="">Choose an operator</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+
+        <input type="text" id="secNum" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Enter second number" />
+
+        <br><br>
+        <input type="submit" value="Try Me!" onclick="calculate()">
+
+        <p id="result"></p>
+    </div>
+</body>
+</html>
