@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimized Calculator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <p>Enter numbers and choose an operator:</p>
+
+        <input type="text" id="firstNum" placeholder="Enter first number">
+        <select id="operator">
+            <option value="">Choose an operator</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="secNum" placeholder="Enter second number">
+
+        <br><br>
+        <button id="calculateBtn">Try Me!</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            const $firstNum = $("#firstNum"),
+                  $secNum = $("#secNum"),
+                  $operator = $("#operator"),
+                  $result = $("#result"),
+                  $calculateBtn = $("#calculateBtn");
+
+            // Ensure only numbers are entered
+            function sanitizeInput() {
+                $(this).val($(this).val().replace(/\D/g, "")); //match digits globally
+            }
+            $firstNum.on("input", sanitizeInput);
+            $secNum.on("input", sanitizeInput);
+
+            function calculate() {
+                const x = parseInt($firstNum.val(), 10);
+                const y = parseInt($secNum.val(), 10);
+                const operator = $operator.val();
+
+                if (isNaN(x) || isNaN(y) || x < 0 || y < 0) {
+                    alert("Error: Please enter positive numbers.");
+                    return;
+                }
+
+                if ((operator === "/" || operator === "%") && y === 0) {
+                    alert("It’s over 9000!");
+                    return;
+                }
+
+                let result;
+                switch (operator) {
+                    case "+": result = x + y; break;
+                    case "-": result = x - y; break;
+                    case "*": result = x * y; break;
+                    case "/": result = x / y; break;
+                    case "%": result = x % y; break;
+                    default:
+                        alert("Please select an operator.");
+                        return;
+                }
+
+                // Update result only if it changes
+                const newText = `The result is ${result}.`;
+
+                $result.text(newText);
+                alert(newText);
+				console.log(result);
+
+            }
+
+            // Bind event listener
+            $calculateBtn.on("click", calculate);
+
+            // Reminder alert every 30 seconds
+            setInterval(() => alert("Please, use me..."), 30000);
+        });
+    </script>
+</body>
+</html>

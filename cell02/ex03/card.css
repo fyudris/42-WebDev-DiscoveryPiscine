@@ -2,11 +2,11 @@
 	display: flex;
 }
 
-.card {
-	width: 360px;
-	height: auto;
-	border-radius: 20px;
+table {
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	border: none;
+	border-radius: 20px;
+	width: 360px;
 }
 
 .card-img {
@@ -16,12 +16,12 @@
 .card-body {
 	display: flex;
 	flex-direction: column;
-	/* justify-content: flex-start; */
 	align-items: center;
 }
 
 .card-body h3 {
 	font-size: 2em;
+	margin-top: -2px;
 }
 
 .card-body h5 {
@@ -42,7 +42,7 @@
 .card-footer {
 	display: flex;
 	justify-content: center;
-	margin: 10px 0 10px 0;
+	margin: 10px 0 10px 0; /*top right bottom left*/
 }
 
 .card-footer img {

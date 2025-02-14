@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Balloon</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<style>
+		body {
+			display: flex;
+			height: 100vh;
+			flex-direction: column-reverse;
+			justify-content: center;
+			background-color: seashell;
+		}
+		.ballon {
+			width: 200px;
+			height: 200px;
+			margin: 0 auto 10px;
+			border-radius: 50%;
+		}
+		.red {
+			background-color: red;
+		}
+		.green {
+			background-color: green;
+		}
+		.blue {
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div class="ballon red"></div>
+
+	<script>
+		$(document).ready(function () {
+			function changeColor($elem) {
+				if ($elem.hasClass("red")) {
+					$elem.removeClass("red").addClass("green");
+				} else if ($elem.hasClass("green")) {
+					$elem.removeClass("green").addClass("blue");
+				} else {
+					$elem.removeClass("blue").addClass("red");
+				}
+			}
+
+			function handleClick() {
+				let $balloon = $(this);
+				changeColor($balloon);
+
+				if ($balloon.width() < 420) {
+					$balloon.css({
+						"width": ($balloon.width() + 10) + "px",
+						"height": ($balloon.height() + 10) + "px"
+					});
+				} else {
+					$balloon.css({
+						"width": "200px",
+						"height": "200px"
+					});
+				}
+
+				console.log("Class List:", $balloon.attr("class"));
+				console.log("Width:", $balloon.width());
+			}
+
+			function onHover() {
+				let $balloon = $(this);
+				invertColor($balloon);
+				$balloon.css({
+					"width": Math.max(200, $balloon.width() - 5) + "px",
+					"height": Math.max(200, $balloon.height() - 5) + "px"
+				});
+
+				console.log("Class List:", $balloon.attr("class"));
+				console.log("Width:", $balloon.width());
+			}
+
+			function invertColor($elem) {
+				if ($elem.hasClass("green")) {
+					$elem.removeClass("green").addClass("blue");
+				} else if ($elem.hasClass("blue")) {
+					$elem.removeClass("blue").addClass("red");
+				} else {
+					$elem.removeClass("red").addClass("green");
+				}
+			}
+
+			// Attach event listeners using jQuery
+			$(".ballon").on("click", handleClick);
+			$(".ballon").on("mouseleave", onHover);
+		});
+	</script>
+</body>
+</html>
